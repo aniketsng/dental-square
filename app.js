@@ -32,35 +32,35 @@ function showSection(sectionId) {
 // Function to handle loading the external HTML for Home section
 function handleHomeClick() {
     const homeIframe = document.getElementById('home-iframe');
-    homeIframe.src = 'file:///B:/HTML/APP/dental-home.html';
+    homeIframe.src = 'dental-home.html';
     showSection('home-section');
 }
 
 // Function to handle loading the external HTML for Updates section
 function handleUpdatesClick() {
     const updatesIframe = document.getElementById('updates-iframe');
-    updatesIframe.src = 'file:///B:/HTML/APP/dental-updates.html';
+    updatesIframe.src = 'dental-updates.html';
     showSection('updates-section');
 }
 
 // Function to handle loading the external HTML for Contact section
 function handleContactClick() {
     const contactIframe = document.getElementById('contact-iframe');
-    contactIframe.src = 'file:///B:/HTML/APP/dental-contact.html';
+    contactIframe.src = 'dental-contact.html';
     showSection('contact-section');
 }
 
 // Function to handle loading the external HTML for Appointment section
 function handleAppointmentClick() {
     const appointmentIframe = document.getElementById('appointment-iframe');
-    appointmentIframe.src = 'file:///B:/HTML/APP/dental-appointment.html';
+    appointmentIframe.src = 'dental-appointment.html';
     showSection('appointment-container');
 }
 
 // Function to handle loading the external HTML for Review section
 function handleReviewClick() {
     const reviewIframe = document.getElementById('review-iframe');
-    reviewIframe.src = 'file:///B:/HTML/APP/dental-review.html';
+    reviewIframe.src = 'dental-review.html';
     showSection('review-container');
 }
 
