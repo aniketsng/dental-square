@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Updates - Dental Square And Implant Center</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Updates Section Styling */
+        #updates-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        #updates-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .update-card {
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .update-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .update-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .update-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .update-card:hover .update-image-container img {
+            transform: scale(1.05);
+        }
+
+        .update-content {
+            padding: 1.5rem;
+            text-align: left;
+        }
+
+        .update-content p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .update-content h3 {
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        /* Button Styling for Call-to-Actions */
+        .cta-button {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.9rem;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Media Query for Small Devices */
+        @media (max-width: 768px) {
+            .update-image-container {
+                height: 150px;
+            }
+
+            .update-content {
+                padding: 1rem;
+            }
+
+            .update-content p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Updates Section -->
+    <section id="updates-section" class="updates">
+        <h2>Latest Updates</h2>
+
+        <div class="updates-grid">
+            <!-- Update 1: New Dental Technology -->
+            <div class="update-card">
+                <div class="update-image-container">
+                    <img src="https://www.australiadental.com.au/wp-content/uploads/aesthetic-dentistry-in-turkey.jpg" alt="New Dental Technology">
+                </div>
+                <div class="update-content">
+                    <h3>New Dental Technology</h3>
+                    <p>We are excited to announce the addition of the latest dental technology in our clinic. Our new digital X-ray machine provides higher quality images with less radiation exposure.</p>
+                    <a href="#" class="cta-button">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Update 2: Dental Health Awareness Camp -->
+            <div class="update-card">
+                <div class="update-image-container">
+                    <img src="https://i.pinimg.com/564x/35/18/97/351897c145b6cabfd7c3b2ce407f681d.jpg" alt="Dental Health Awareness Camp">
+                </div>
+                <div class="update-content">
+                    <h3>Dental Health Awareness Camp</h3>
+                    <p>We recently organized a Dental Health Awareness Camp, offering free dental check-ups and informative sessions on oral hygiene practices. Thanks to everyone who participated!</p>
+                    <a href="#" class="cta-button">View Photos</a>
+                </div>
+            </div>
+
+            <!-- Update 3: Patient Testimonial -->
+            <div class="update-card">
+                <div class="update-image-container">
+                    <img src="https://i.pinimg.com/564x/81/e9/a9/81e9a91089e6df64f6ae485481eee544.jpg" alt="Patient Testimonial">
+                </div>
+                <div class="update-content">
+                    <h3>Patient Testimonial</h3>
+                    <p>Jane Doe shares her experience of a successful dental implant procedure at our clinic: "The staff was professional, and I am thrilled with the results!"</p>
+                    <a href="#" class="cta-button">Read More</a>
+                </div>
+            </div>
+
+            <!-- Update 4: New Team Member -->
+            <div class="update-card">
+                <div class="update-image-container">
+                    <img src="https://i.pinimg.com/564x/3e/c9/77/3ec977f48036d4d7153fbbf6d0c48319.jpg" alt="New Team Member">
+                </div>
+                <div class="update-content">
+                    <h3>New Team Member</h3>
+                    <p>We are pleased to welcome Dr. John Smith to our team! Dr. Smith specializes in pediatric dentistry and has over 10 years of experience.</p>
+                    <a href="#" class="cta-button">Meet the Team</a>
+                </div>
+            </div>
+
+            <!-- Update 5: Special Offers -->
+            <div class="update-card">
+                <div class="update-image-container">
+                    <img src="https://i.pinimg.com/564x/6a/fc/f2/6afcf2f9e30c8e8e19b84f054721ddf6.jpg" alt="Special Offers">
+                </div>
+                <div class="update-content">
+                    <h3>Special Offers</h3>
+                    <p>Get a 20% discount on teeth whitening services this month! Schedule an appointment now to brighten your smile.</p>
+                    <a href="#" class="cta-button">Claim Offer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

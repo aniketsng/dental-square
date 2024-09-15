@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu with Theme and Info Button</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Menu Button */
+    .menu-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .menu-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 5px;
+      padding: 10px;
+      z-index: 1;
+      width: 200px;
+    }
+
+    .menu-container:hover .menu-content {
+      display: block;
+    }
+
+    /* Theme Toggle */
+    .theme-toggle {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    .theme-switch {
+      position: relative;
+      display: inline-block;
+      width: 40px;
+      height: 20px;
+    }
+
+    .theme-switch input {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 20px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 14px;
+      width: 14px;
+      border-radius: 50%;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: #007bff;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+
+    /* App Info Button */
+    .app-info-btn {
+      display: block;
+      background-color: #28a745;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .app-info-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <button class="menu-btn">Menu</button>
+    <div class="menu-content">
+      <div class="theme-toggle">
+        <label for="themeSwitch">Dark Mode</label>
+        <label class="theme-switch">
+          <input type="checkbox" id="themeSwitch">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <a href="#" class="app-info-btn">App Info</a>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle functionality
+    const themeSwitch = document.getElementById('themeSwitch');
+
+    themeSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.style.backgroundColor = '#333';
+        document.body.style.color = '#fff';
+      } else {
+        document.body.style.backgroundColor = '#f4f4f4';
+        document.body.style.color = '#000';
+      }
+    });
+
+    // App info button functionality (for now just logs to console)
+    const appInfoBtn = document.querySelector('.app-info-btn');
+    appInfoBtn.addEventListener('click', function () {
+      alert('Dental Square And Implant Center v1.0.0');
+    });
+  </script>
+</body>
+</html>
