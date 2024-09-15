@@ -53,7 +53,7 @@ function handleContactClick() {
 // Function to handle loading the external HTML for Appointment section
 function handleAppointmentClick() {
     const appointmentIframe = document.getElementById('appointment-iframe');
-    appointmentIframe.src = 'dental-appointment.html';
+    appointmentIframe.src = 'https://github.com/aniketsng/dental-clinic-app/blob/2d189f2146cda7d7df85300ded9ac51411d1eaea/dental-appointment.html';
     showSection('appointment-container');
 }
 
