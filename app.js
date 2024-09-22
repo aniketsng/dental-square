@@ -1,11 +1,3 @@
-// Function to toggle between light and dark themes
-function toggleTheme() {
-    document.body.classList.toggle('dark-theme');
-}
-
-// Event listener for the theme switch
-document.getElementById('theme-checkbox').addEventListener('change', toggleTheme);
-
 // Function to show the desired section and hide others
 function showSection(sectionId) {
     const sections = ['home-section', 'updates-section', 'contact-section', 'review-container', 'appointment-container'];
@@ -13,66 +5,111 @@ function showSection(sectionId) {
     // Hide all sections with fade-out effect
     sections.forEach(section => {
         const element = document.getElementById(section);
-        element.style.opacity = 0;
-        setTimeout(() => {
-            element.style.display = 'none';
-        }, 300);
+        if (element) {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.style.display = 'none';
+            }, 300);
+        }
     });
 
     // Show the selected section with fade-in effect
     const targetElement = document.getElementById(sectionId);
-    setTimeout(() => {
-        targetElement.style.display = 'block';
+    if (targetElement) {
         setTimeout(() => {
-            targetElement.style.opacity = 1;
-        }, 50);
-    }, 300);
+            targetElement.style.display = 'block';
+            setTimeout(() => {
+                targetElement.style.opacity = 1;
+            }, 50);
+        }, 300);
+    }
 }
 
 // Function to handle loading the external HTML for Home section
 function handleHomeClick() {
     const homeIframe = document.getElementById('home-iframe');
-    homeIframe.src = 'dental-home.html';
+    homeIframe.src = 'file:///B:/HTML/APP/dental-home.html';
     showSection('home-section');
 }
 
 // Function to handle loading the external HTML for Updates section
 function handleUpdatesClick() {
     const updatesIframe = document.getElementById('updates-iframe');
-    updatesIframe.src = 'dental-updates.html';
+    updatesIframe.src = 'file:///B:/HTML/APP/dental-updates.html';
     showSection('updates-section');
 }
 
 // Function to handle loading the external HTML for Contact section
 function handleContactClick() {
     const contactIframe = document.getElementById('contact-iframe');
-    contactIframe.src = 'dental-contact.html';
+    contactIframe.src = 'file:///B:/HTML/APP/dental-contact.html';
     showSection('contact-section');
 }
 
 // Function to handle loading the external HTML for Appointment section
 function handleAppointmentClick() {
     const appointmentIframe = document.getElementById('appointment-iframe');
-    appointmentIframe.src = 'dental-appointment.html';
+    appointmentIframe.src = 'file:///B:/HTML/APP/dental-appointment.html';
     showSection('appointment-container');
 }
 
 // Function to handle loading the external HTML for Review section
 function handleReviewClick() {
     const reviewIframe = document.getElementById('review-iframe');
-    reviewIframe.src = 'dental-review.html';
+    reviewIframe.src = 'file:///B:/HTML/APP/dental-review.html';
     showSection('review-container');
 }
 
-// Event listeners for the navigation buttons
+// Function to handle loading the external HTML for Developer Info section
+function handleDevInfoClick() {
+    const devInfoIframe = document.getElementById('home-iframe'); // Assuming iframe exists for content loading
+    devInfoIframe.src = 'file:///B:/HTML/APP/dev-info.html';
+    showSection('home-section'); // Show the section where the iframe is loaded
+}
+
+// Event listeners for the navigation buttons in the footer
 document.getElementById('home-button').addEventListener('click', handleHomeClick);
 document.getElementById('updates-button').addEventListener('click', handleUpdatesClick);
 document.getElementById('contact-button').addEventListener('click', handleContactClick);
-document.getElementById('appointment-button').addEventListener('click', handleAppointmentClick);
-document.getElementById('review-button').addEventListener('click', handleReviewClick);
 
-// Initialize on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Set up the button click events
-    handleHomeClick(); // Optional: Auto-load the Home section on page load
+// Event listeners for the buttons in the header
+document.getElementById('review-button').addEventListener('click', handleReviewClick);
+document.getElementById('dev-info-button').addEventListener('click', handleDevInfoClick);
+document.getElementById('appointment-button').addEventListener('click', handleAppointmentClick);
+
+// Function to expand/collapse the hidden buttons when More is clicked
+document.getElementById('more-button').addEventListener('click', function() {
+    const reviewButton = document.getElementById('review-button');
+    const devInfoButton = document.getElementById('dev-info-button');
+    const appointmentButton = document.getElementById('appointment-button');
+    
+    // Use a boolean to check if buttons are visible or not
+    const isCollapsed = reviewButton.style.display === 'none' || reviewButton.style.display === '';
+
+    if (isCollapsed) {
+        // Expand the buttons
+        reviewButton.style.display = 'block';
+        devInfoButton.style.display = 'block';
+        appointmentButton.style.display = 'block';
+        
+        setTimeout(() => {
+            reviewButton.style.opacity = 1;
+            devInfoButton.style.opacity = 1;
+            appointmentButton.style.opacity = 1;
+        }, 50);  // Small delay to ensure smooth fade-in
+    } else {
+        // Collapse the buttons
+        reviewButton.style.opacity = 0;
+        devInfoButton.style.opacity = 0;
+        appointmentButton.style.opacity = 0;
+        
+        setTimeout(() => {
+            reviewButton.style.display = 'none';
+            devInfoButton.style.display = 'none';
+            appointmentButton.style.display = 'none';
+        }, 300);  // Same delay as fade-out duration
+    }
 });
+
+// Load the home section by default on page load
+document.addEventListener('DOMContentLoaded', handleHomeClick);
