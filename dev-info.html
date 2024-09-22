@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Info</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffffff, #ffffff);
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Enhanced background glow on hover */
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 0 30px 10px rgba(90, 103, 216, 0.7); /* Stronger glow */
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .info-item {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Icon color */
+        .info-item .fa-envelope {
+            color: red !important;
+        }
+
+        .info-item .fa-instagram {
+            color: green !important;
+        }
+
+        .info-item .fa-github {
+            color: blue !important;
+        }
+
+        /* Effects on hover */
+        .info-item i {
+            transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
+
+        .info-item:hover i {
+            transform: scale(1.5) rotate(15deg); /* Zoom and rotate */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+        }
+
+        .info-item:hover .fa-envelope {
+            color: darkred !important; /* Darken the red on hover */
+        }
+
+        .info-item:hover .fa-instagram {
+            color: darkgreen !important; /* Darken the green on hover */
+        }
+
+        .info-item:hover .fa-github {
+            color: darkblue !important; /* Darken the blue on hover */
+        }
+
+        .info-item a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            margin-left: 12px;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #5A67D8;
+        }
+
+        footer {
+            margin-top: 25px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .info-item a {
+                font-size: 14px;
+            }
+
+            .info-item i {
+                font-size: 28px;
+            }
+        }
+    </style>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Developer Info</h1>
+        
+        <div class="info-item">
+            <i class="fas fa-envelope fa-2x"></i>
+            <a href="mailto:aniketsng2@gmail.com">aniketsng2@gmail.com</a>
+        </div>
+
+        <div class="info-item">
+            <i class="fab fa-instagram fa-2x"></i>
+            <a href="https://instagram.com/aniket_sng" target="_blank">@aniket_sng</a>
+        </div>
+
+        <div class="info-item">
+            <i class="fab fa-github fa-2x"></i>
+            <a href="https://github.com/aniketsng" target="_blank">@aniketsng</a>
+        </div>
+
+        <footer>&copy; 2024 Aniket Singh | Developer</footer>
+    </div>
+
+    <!-- Font Awesome Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+</body>
+</html>
