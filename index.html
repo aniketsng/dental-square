@@ -9,13 +9,18 @@
 </head>
 <body>
 
-    <!-- Header with Theme Switch -->
+    <!-- Header with More, Review, Dev Info, and Appointment Buttons -->
     <header>
-        <button id="review-button">Review</button>
-        <label class="theme-switcher">
-            <input type="checkbox" id="theme-checkbox">
-            <i class="fas fa-moon"></i>
-        </label>
+        <div class="header-buttons">
+            <!-- More Button -->
+            <button id="more-button">More</button>
+            <!-- Review Button (Initially Hidden) -->
+            <button id="review-button" style="display: none;">Review</button>
+            <!-- Dev Info Button (Initially Hidden) -->
+            <button id="dev-info-button" style="display: none;">Dev Info</button>
+            <!-- Appointment Button (Initially Hidden) -->
+            <button id="appointment-button" style="display: none;">Appointment</button>
+        </div>
     </header>
 
     <!-- Home Section -->
@@ -46,7 +51,6 @@
     <!-- Footer with Navigation Buttons -->
     <footer>
         <button id="home-button">Home</button>
-        <button id="appointment-button">Appointment</button>
         <button id="updates-button">Updates</button>
         <button id="contact-button">Contact</button>
     </footer>
