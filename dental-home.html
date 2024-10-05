@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dental Square And Implant Center</title>
     <!-- Link to Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
     <style>
         /* Base Styles */
         body {
@@ -28,9 +29,16 @@
             font-size: 1.1rem;
         }
 
+        /* Container for left and right margins */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
         /* Home Section Styles */
         .home-section {
-            padding: 60px;
+            padding: 60px 0;
             background-color: #fff;
             border-bottom: 1px solid #dee2e6;
         }
@@ -87,36 +95,49 @@
         /* Services Overview Section */
         .services-overview {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 50px;
             margin: 50px 0;
-            gap: 20px;
         }
 
         .service-item {
-            flex: 1;
-            background-color: #f1f3f5;
-            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
             padding: 20px;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
         }
 
-        .service-item img {
-            width: 100%;
+        /* Alternate layout: left-right alternating */
+        .service-item:nth-child(odd) {
+            flex-direction: row; /* Image on left, text on right */
+        }
+
+        .service-item:nth-child(even) {
+            flex-direction: row-reverse; /* Image on right, text on left */
+        }
+
+        /* Uniform Image Size */
+        .service-image img {
             max-width: 100%;
             height: auto;
+            width: 400px;
             border-radius: 10px;
         }
 
-        .service-item h3 {
-            margin-top: 15px;
-            font-size: 1.5rem;
-            color: #004d99;
+        /* Initial Hidden State for Image and Text */
+        .service-item .service-image, .service-item .service-content {
+            flex: 1;
+            opacity: 0;
+            transform: translateY(50px); /* Start from below */
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .service-item:hover {
-            transform: translateY(-10px);
+        /* Reveal Animation */
+        .service-item .service-image.reveal, .service-item .service-content.reveal {
+            opacity: 1;
+            transform: translateY(0); /* Return to original position */
         }
 
         /* Benefits Section */
@@ -169,13 +190,8 @@
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .services-overview {
+            .service-item {
                 flex-direction: column;
-                gap: 30px;
-            }
-
-            .service-item img {
-                width: 100%;
             }
 
             .hero-banner h1 {
@@ -185,65 +201,130 @@
             .hero-banner p {
                 font-size: 1.1rem;
             }
+
+            .service-image img {
+                width: 100%; /* Full width on smaller screens */
+            }
         }
     </style>
 
 </head>
+
 <body>
 
-<!-- Home Section -->
-<section id="home-section" class="home-section">
-    <div class="hero-banner">
-        <h1>Welcome to Dental Square And Implant Center</h1>
-        <p>Your smile is our priority. Comprehensive dental care for the whole family.</p>
-        <button id="appointment-button">Book an Appointment</button>
-    </div>
+    <!-- Home Section -->
+    <section id="home-section" class="home-section">
+        <div class="container">
+            <div class="hero-banner">
+                <h1>Welcome to Dental Square And Implant Center</h1>
+                <p>Your smile is our priority. Comprehensive dental care for the whole family.</p>
+                <button id="appointment-button">Book an Appointment</button>
+            </div>
 
-    <div class="introduction">
-        <h2>About Us</h2>
-        <p>We provide top-notch dental care using the latest technology. Our experienced team ensures you receive the best personalized care. Come in for a consultation and experience dental care like never before.</p>
-    </div>
-
-    <div class="services-overview">
-        <div class="service-item">
-            <img src="https://i.pinimg.com/564x/a6/40/24/a640244a0eae58f59b30cab2cfca4cb7.jpg" alt="General Dentistry">
-            <h3>General Dentistry</h3>
+            <div class="introduction">
+                <h2>About Us</h2>
+                <p>We provide top-notch dental care using the latest technology. Our experienced team ensures you receive the best personalized care. Come in for a consultation and experience dental care like never before.</p>
+            </div>
         </div>
-        <div class="service-item">
-            <img src="https://i.pinimg.com/236x/e9/33/90/e93390456a33d78b58acc7745aa2e647.jpg" alt="Dental Implants">
-            <h3>Dental Implants</h3>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services-section" class="services-section">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-overview">
+                <!-- General Dentistry -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="https://i.pinimg.com/564x/a6/40/24/a640244a0eae58f59b30cab2cfca4cb7.jpg" alt="General Dentistry">
+                    </div>
+                    <div class="service-content">
+                        <h3>General Dentistry</h3>
+                        <p>Our general dentistry services cover routine check-ups, cleanings, and preventive care. We focus on maintaining your oral health with a wide range of treatments like fillings, root canals, and gum disease management. Regular visits help prevent cavities and detect potential issues early.</p>
+                    </div>
+                </div>
+
+                <!-- Dental Implants -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="https://i.pinimg.com/236x/e9/33/90/e93390456a33d78b58acc7745aa2e647.jpg" alt="Dental Implants">
+                    </div>
+                    <div class="service-content">
+                        <h3>Dental Implants</h3>
+                        <p>Missing teeth? Dental implants provide a permanent solution to restore both the function and aesthetics of your smile. Implants are surgically placed into the jawbone and topped with a crown, allowing you to eat, speak, and smile with confidence again.</p>
+                    </div>
+                </div>
+
+                <!-- Cosmetic Dentistry -->
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="https://naturecoastdentistry.com/wp-content/uploads/aesthetic-dentistry-2208.jpg" alt="Cosmetic Dentistry">
+                    </div>
+                    <div class="service-content">
+                        <h3>Cosmetic Dentistry</h3>
+                        <p>Enhance your smile with our cosmetic dentistry services. From teeth whitening to veneers, we offer a variety of treatments designed to improve the appearance of your teeth and boost your confidence. Achieve a smile you'll love to show off.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="service-item">
-            <img src="https://i.pinimg.com/236x/bc/db/5f/bcdb5f86ed49a3d82c9343426b3a8231.jpg" alt="Cosmetic Dentistry">
-            <h3>Cosmetic Dentistry</h3>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits-section" class="benefits-section">
+        <div class="container">
+            <div class="benefits-list">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Experienced Dentists</li>
+                    <li>State-of-the-Art Technology</li>
+                    <li>Personalized Care</li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="benefits-list">
-        <h2>Why Choose Us?</h2>
-        <ul>
-            <li>Experienced Dentists</li>
-            <li>State-of-the-Art Technology</li>
-            <li>Personalized Care</li>
-        </ul>
-    </div>
+    <!-- Testimonial Section -->
+    <section id="testimonial-section" class="testimonial-section">
+        <div class="container">
+            <div class="testimonial">
+                <h2>What Our Patients Say</h2>
+                <blockquote>
+                    <p>"The best dental experience I've ever had. The staff is kind, professional, and knowledgeable. Highly recommend!"</p>
+                    <cite>- A Happy Patient</cite>
+                </blockquote>
+            </div>
+        </div>
+    </section>
 
-    <div class="testimonial">
-        <h2>What Our Patients Say</h2>
-        <blockquote>
-            <p>"The best dental experience I've ever had. The staff is kind, professional, and knowledgeable. Highly recommend!"</p>
-            <cite>- A Happy Patient</cite>
-        </blockquote>
-    </div>
-</section>
+    <!-- JavaScript to handle scroll animations -->
+    <script>
+        // Function to handle appointment button click
+        document.getElementById('appointment-button').addEventListener('click', function () {
+            // Redirect to the local file path of the appointment page
+            window.location.href = 'file:///B:/HTML/APP/dental-appointment.html';
+        });
 
-<script>
-    // Function to handle appointment button click
-    document.getElementById('appointment-button').addEventListener('click', function() {
-        // Redirect to the local file path of the appointment page
-        window.location.href = 'dental-appointment.html';
-    });
-</script>
+        // Intersection Observer to reveal elements on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                } else {
+                    entry.target.classList.remove('reveal'); // Removes the class when scrolling up
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        // Observe each image and text content individually
+        const serviceImages = document.querySelectorAll('.service-image');
+        const serviceContents = document.querySelectorAll('.service-content');
+
+        serviceImages.forEach(img => observer.observe(img));
+        serviceContents.forEach(content => observer.observe(content));
+    </script>
 
 </body>
+
 </html>
