@@ -49,7 +49,7 @@ function handleContactClick() {
 // Function to handle loading the external HTML for Appointment section
 function handleAppointmentClick() {
     const appointmentIframe = document.getElementById('appointment-iframe');
-    appointmentIframe.src = 'dental-appointment.html';
+    appointmentIframe.src = 'dental-contact.html';
     showSection('appointment-container');
 }
 
